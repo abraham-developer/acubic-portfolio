@@ -312,8 +312,8 @@ const Hero: React.FC = () => {
           <h1 className="main-text">ACUBIC</h1>
           
           {/* Subtextos */}
-          <p className="subtext">SOFTWARE DEVELOPMENT</p>
-          <p className="developer-text">Abraham Rivera • abrahamdev.net</p>
+       <p className="subtext">ABRAHAM RIVERA</p>
+       <p className="developer-text">Full-Stack Developer • C# • TypeScript • Cloud Architect</p>
         </div>
       </section>
     </div>

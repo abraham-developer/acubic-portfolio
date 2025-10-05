@@ -34,29 +34,29 @@ const About: React.FC = () => {
   const storySteps = [
     {
       year: "2018",
-      title: "Los Primeros Pasos",
-      description: "ACUBIC comenzó como una idea simple: crear software que realmente sirva a las personas. Empezamos con proyectos pequeños, aprendiendo de cada línea de código y cada cliente.",
+      title: "El Inicio del Código",
+      description: "Todo comenzó con C# y la pasión por resolver problemas complejos. Desde el primer 'Hello World', supe que escribir código sería mi forma de crear impacto en el mundo digital.",
       icon: "💻",
       color: "#40e0ff"
     },
     {
       year: "2020",
-      title: "Creciendo Juntos",
-      description: "Expandimos nuestras habilidades y servicios, trabajando codo a codo con nuestros clientes para entender sus necesidades reales y crear soluciones que marquen la diferencia.",
+      title: "Arquitecturas Escalables",
+      description: "Profundicé en .NET, APIs REST, microservicios y bases de datos. Cada proyecto me enseñó que el buen código no solo funciona, sino que evoluciona con las necesidades del negocio.",
       icon: "🚀",
       color: "#64b5f6"
     },
     {
       year: "2022",
-      title: "ACUBIC se Consolida",
-      description: "Nos establecimos oficialmente con una misión clara: desarrollar software accesible y de calidad, siempre con un enfoque humano y cercano a nuestros clientes.",
+      title: "ACUBIC Nace",
+      description: "Fundé ACUBIC como mi sello personal: Abraham Cubic. Un espacio donde convergen automatización, integraciones y soluciones cloud que realmente transforman operaciones empresariales.",
       icon: "⭐",
       color: "#81c784"
     },
     {
       year: "2025",
-      title: "Mirando Adelante",
-      description: "Hoy seguimos comprometidos con crear tecnología que simplifique la vida de las personas, siempre aprendiendo y mejorando en cada proyecto que emprendemos.",
+      title: "Full-Stack Evolution",
+      description: "De C# a TypeScript, de SQL a NoSQL, de monolitos a microservicios. Hoy domino el stack completo y creo sistemas que escalan, se integran y evolucionan con el negocio.",
       icon: "🌟",
       color: "#ffb74d"
     }
@@ -184,13 +184,46 @@ const About: React.FC = () => {
           margin: 0 2rem;
           position: relative;
           transition: all 0.6s ease;
+          overflow: hidden;
         }
 
+        .story-content::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, 
+            transparent,
+            rgba(64, 224, 255, 0.1),
+            transparent
+          );
+          transition: all 0.6s ease;
+        }
+
+        .story-step:hover .story-content::before,
+        .story-step.active .story-content::before {
+          left: 100%;
+        }
+        
         .story-step.active .story-content {
           background: rgba(26, 39, 68, 0.6);
-          border-color: rgba(64, 224, 255, 0.5);
+          border-color: rgba(64, 224, 255, 0.8);
           transform: scale(1.02);
-          box-shadow: 0 20px 40px rgba(64, 224, 255, 0.1);
+          box-shadow: 
+            0 20px 40px rgba(64, 224, 255, 0.2),
+            inset 0 0 60px rgba(64, 224, 255, 0.1),
+            0 0 80px rgba(64, 224, 255, 0.15);
+        }
+        
+        .story-step:hover .story-content {
+          background: rgba(26, 39, 68, 0.5);
+          border-color: rgba(64, 224, 255, 0.6);
+          box-shadow: 
+            0 15px 35px rgba(64, 224, 255, 0.15),
+            inset 0 0 40px rgba(64, 224, 255, 0.08),
+            0 0 60px rgba(64, 224, 255, 0.1);
         }
 
         .story-year {
@@ -336,8 +369,8 @@ const About: React.FC = () => {
         <div className="story-container">
           {/* Título de la sección */}
           <div className="section-title">
-            <h2 className="title-main">NUESTRA HISTORIA</h2>
-            <p className="title-subtitle">El camino de ACUBIC hasta hoy</p>
+            <h2 className="title-main">MI TRAYECTORIA</h2>
+            <p className="title-subtitle">De las primeras líneas de código a arquitecturas empresariales</p>
           </div>
 
           {/* Timeline */}

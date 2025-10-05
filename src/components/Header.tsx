@@ -95,10 +95,33 @@ const Header: React.FC = () => {
           gap: 1rem;
           cursor: pointer;
           transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .logo-section::before {
+          content: '{ dev }';
+          position: absolute;
+          left: -80px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-family: 'Courier New', monospace;
+          font-size: 0.8rem;
+          color: #40e0ff;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        .logo-section:hover::before {
+          opacity: 0.6;
+          left: -70px;
         }
 
         .logo-section:hover {
           transform: scale(1.05);
+        }
+
+        .logo-section:hover .logo-text {
+          text-shadow: 0 0 30px rgba(64, 224, 255, 0.8);
         }
 
         .logo-hex {
@@ -143,6 +166,7 @@ const Header: React.FC = () => {
           font-weight: 300;
           letter-spacing: 3px;
           text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -310,6 +334,10 @@ const Header: React.FC = () => {
           .nav-menu {
             right: -1rem;
             min-width: 180px;
+          }
+
+          .logo-section::before {
+            display: none;
           }
         }
       `}</style>
