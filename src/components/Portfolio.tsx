@@ -10,19 +10,19 @@ const Portfolio: React.FC = () => {
       id: 'wms',
       title: 'WMS Enterprise',
       category: 'Warehouse Management',
-      description: 'Sistema completo de gestión de almacenes con optimización de rutas, control de inventario en tiempo real y analytics avanzados para maximizar la eficiencia operacional.',
-      technologies: ['SQL Server', '.NET APIs', 'React', 'Docker'],
-      features: ['Optimización de rutas', 'Inventario en tiempo real', 'Analytics avanzados', 'Integración IoT'],
-      impact: '40% mejora en eficiencia',
+      description: 'Desarrollé un sistema completo de gestión de almacenes usando .NET APIs y React. Implementé algoritmos de optimización de rutas, WebSockets para actualizaciones en tiempo real y un dashboard con analytics avanzados que procesaba millones de registros.',
+      technologies: ['SQL Server', '.NET Core', 'React', 'Docker', 'SignalR'],
+      features: ['Optimización de rutas A*', 'Real-time con SignalR', 'Analytics con Power BI', 'Integración IoT RFID'],
+      impact: '40% mejora en eficiencia operacional',
       color: '#ff6b9d'
     },
     {
       id: 'oms',
       title: 'OMS Platform',
       category: 'Order Management',
-      description: 'Plataforma centralizada para gestión de órdenes multicanal con automatización de workflows, seguimiento en tiempo real y sincronización con múltiples sistemas de e-commerce.',
-      technologies: ['PostgreSQL', 'n8n', '.NET', 'Angular'],
-      features: ['Gestión multicanal', 'Workflows automatizados', 'Seguimiento tiempo real', 'Sincronización multi-sistema'],
+      description: 'Arquitecturé una plataforma de gestión de órdenes multicanal desde cero. Usé PostgreSQL con particionamiento avanzado, n8n para orquestar workflows complejos y Angular para el frontend. El sistema procesa +50k órdenes diarias sin sudar.',
+      technologies: ['PostgreSQL', 'n8n', '.NET 8', 'Angular 17', 'Redis'],
+      features: ['Event-driven architecture', 'Workflows con n8n', 'Caching con Redis', 'API Gateway custom'],
       impact: '65% reducción en tiempo de procesamiento',
       color: '#40e0ff'
     },
@@ -30,39 +30,39 @@ const Portfolio: React.FC = () => {
       id: 'whatsapp-chat',
       title: 'WhatsApp Live Chat',
       category: 'Customer Communication',
-      description: 'Sistema de chat en vivo integrado con WhatsApp Business API, gestión automática de conversaciones y dashboard analítico para equipos de soporte al cliente.',
-      technologies: ['Webhooks', 'React', 'PostgreSQL', 'WhatsApp API'],
-      features: ['Chat en tiempo real', 'Gestión automática', 'Dashboard analítico', 'Integración CRM'],
+      description: 'Construí un sistema de chat empresarial integrando WhatsApp Business API con webhooks en tiempo real. El backend en .NET maneja miles de conversaciones simultáneas usando async/await patterns y almacena todo en PostgreSQL.',
+      technologies: ['Webhooks', 'React', 'PostgreSQL', '.NET', 'WhatsApp API'],
+      features: ['Real-time messaging', 'Auto-respuestas IA', 'Dashboard analytics', 'CRM integration'],
       impact: '90% satisfacción del cliente',
       color: '#25d366'
     },
     {
       id: 'qdrant-ai',
-      title: 'Qdrant AI Integration',
+      title: 'Qdrant AI Search',
       category: 'Artificial Intelligence',
-      description: 'Integración avanzada con Qdrant para búsquedas vectoriales semánticas, procesamiento de lenguaje natural y recomendaciones inteligentes basadas en embedding vectors.',
-      technologies: ['Qdrant', 'Python', 'Vector DB', '.NET APIs'],
-      features: ['Búsqueda semántica', 'Vector embeddings', 'NLP avanzado', 'Recomendaciones IA'],
-      impact: '85% precisión en búsquedas',
+      description: 'Implementé un motor de búsqueda semántica usando Qdrant vector database. Convertí texto a embeddings con modelos de OpenAI, indexé millones de vectores y creé una API en .NET que responde búsquedas en milisegundos.',
+      technologies: ['Qdrant', 'Python', 'Vector DB', '.NET', 'OpenAI'],
+      features: ['Búsqueda semántica', 'Vector embeddings', 'NLP con transformers', 'Recomendaciones ML'],
+      impact: '85% precisión en búsquedas semánticas',
       color: '#9c27b0'
     },
     {
       id: 'shipping-apis',
-      title: 'Shipping APIs Suite',
+      title: 'Shipping APIs Hub',
       category: 'Logistics Integration',
-      description: 'Suite completa de APIs para integración con múltiples paqueterías, seguimiento unificado, cálculo automático de tarifas y optimización de envíos a nivel nacional e internacional.',
-      technologies: ['REST APIs', '.NET', 'Docker Swarm', 'IONOS'],
-      features: ['Multi-carrier integration', 'Seguimiento unificado', 'Cálculo automático', 'Optimización de rutas'],
-      impact: '50+ integraciones activas',
+      description: 'Desarrollé una suite de APIs RESTful que integra +20 paqueterías diferentes. Implementé patrones de retry, circuit breaker y caching distribuido. Todo corre en Docker Swarm en IONOS con auto-scaling.',
+      technologies: ['REST APIs', '.NET', 'Docker Swarm', 'IONOS', 'Redis'],
+      features: ['Multi-carrier API', 'Rate limiting', 'Circuit breaker pattern', 'Auto-scaling'],
+      impact: '50+ integraciones en producción',
       color: '#ff9800'
     },
     {
       id: 'live-integrations',
-      title: 'Live Integrations Hub',
-      category: 'Real-time Systems',
-      description: 'Hub centralizado de integraciones en tiempo real para múltiples clientes, con monitoreo 24/7, failover automático y escalabilidad horizontal para garantizar alta disponibilidad.',
-      technologies: ['n8n', 'Webhooks', 'Docker', 'Monitoring'],
-      features: ['Tiempo real', 'Monitoreo 24/7', 'Failover automático', 'Escalabilidad horizontal'],
+      title: 'Real-Time Integration Hub',
+      category: 'Event-Driven Systems',
+      description: 'Creé un hub de integraciones en tiempo real usando n8n, webhooks y arquitectura event-driven. El sistema procesa eventos de múltiples fuentes, los transforma y los distribuye con garantía de entrega. Todo monitorizado 24/7.',
+      technologies: ['n8n', 'Webhooks', 'Docker', 'Prometheus', 'Grafana'],
+      features: ['Event streaming', 'Monitoring 24/7', 'Auto-failover', 'Horizontal scaling'],
       impact: '99.9% uptime garantizado',
       color: '#4caf50'
     }
@@ -188,6 +188,21 @@ const Portfolio: React.FC = () => {
           transform: scaleY(0);
           transition: transform 0.3s ease;
           transform-origin: bottom;
+        }
+
+        .project-tab::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+            rgba(var(--color-rgb), 0.15) 0%, 
+            transparent 50%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .project-tab:hover::after {
+          opacity: 1;
         }
 
         .project-tab.active::before {
@@ -328,6 +343,14 @@ const Portfolio: React.FC = () => {
           font-size: 0.8rem;
           color: #40e0ff;
           letter-spacing: 0.5px;
+          transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+          background: rgba(64, 224, 255, 0.2);
+          border-color: #40e0ff;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(64, 224, 255, 0.2);
         }
 
         .feature-list {
@@ -359,6 +382,21 @@ const Portfolio: React.FC = () => {
           border-radius: 15px;
           border: 1px solid rgba(64, 224, 255, 0.2);
           margin-top: 1rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .impact-highlight::before {
+          content: '';
+          position: absolute;
+          inset: -50%;
+          background: conic-gradient(from 0deg, transparent, var(--active-color, #40e0ff), transparent);
+          animation: impactRotate 4s linear infinite;
+          opacity: 0.1;
+        }
+
+        @keyframes impactRotate {
+          to { transform: rotate(360deg); }
         }
 
         .impact-text {
@@ -366,6 +404,8 @@ const Portfolio: React.FC = () => {
           font-weight: 600;
           color: var(--active-color, #40e0ff);
           text-shadow: 0 0 15px var(--active-color, #40e0ff);
+          position: relative;
+          z-index: 1;
         }
 
         .floating-indicator {
@@ -424,8 +464,8 @@ const Portfolio: React.FC = () => {
         <div className="portfolio-container">
           {/* Título */}
           <div className="portfolio-title">
-            <h2 className="title-main">PORTFOLIO</h2>
-            <p className="title-subtitle">Soluciones que transforman negocios</p>
+            <h2 className="title-main">MIS PROYECTOS</h2>
+            <p className="title-subtitle">Soluciones reales que he desarrollado y desplegado en producción</p>
           </div>
 
           {/* Projects showcase */}
@@ -436,7 +476,10 @@ const Portfolio: React.FC = () => {
                 <div
                   key={project.id}
                   className={`project-tab ${activeProject === index ? 'active' : ''}`}
-                  style={{ '--project-color': project.color } as React.CSSProperties}
+                  style={{ 
+                    '--project-color': project.color,
+                    '--color-rgb': project.color.replace('#', '').match(/.{2}/g)?.map(hex => parseInt(hex, 16)).join(', ')
+                  } as React.CSSProperties}
                   onClick={() => setActiveProject(index)}
                 >
                   <div className="tab-header">

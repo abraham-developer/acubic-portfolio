@@ -9,12 +9,12 @@ const Contact: React.FC = () => {
       id: 'validate',
       title: 'Validar Proyecto',
       subtitle: 'Analicemos tu idea',
-      message: 'Contacta para validar viabilidad técnica',
+      message: 'Hablemos de la viabilidad técnica de tu proyecto',
       method: 'email',
       value: 'desarrollo@abrahamdev.net',
       icon: '◈',
       color: '#40e0ff',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Validación de Proyecto - ACUBIC&body=Hola! Me gustaría validar la viabilidad técnica de mi proyecto.', '_blank')
+      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Validación de Proyecto - ACUBIC&body=Hola Abraham! Me gustaría validar la viabilidad técnica de mi proyecto.', '_blank')
     },
     {
       id: 'quote',
@@ -31,12 +31,12 @@ const Contact: React.FC = () => {
       id: 'integration',
       title: 'Integración Urgente',
       subtitle: 'Solución rápida',
-      message: 'Necesitas conectar sistemas ya mismo',
+      message: '¿Necesitas conectar sistemas ya?',
       method: 'whatsapp',
       value: 'WhatsApp directo',
       icon: '◆',
       color: '#25d366',
-      action: () => window.open('https://wa.me/525538891487?text=Hola! Necesito una integración urgente para mi sistema.', '_blank')
+      action: () => window.open('https://wa.me/525538891487?text=Hola Abraham! Necesito una integración urgente para mi sistema.', '_blank')
     },
     {
       id: 'consultation',
@@ -47,7 +47,7 @@ const Contact: React.FC = () => {
       value: 'desarrollo@abrahamdev.net',
       icon: '◉',
       color: '#ff9800',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Consultoría Técnica - ACUBIC&body=Hola! Me interesa una consultoría para optimizar mi arquitectura tecnológica.', '_blank')
+      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Consultoría Técnica - ACUBIC&body=Hola Abraham! Me interesa una consultoría para optimizar mi arquitectura tecnológica.', '_blank')
     }
   ];
 
@@ -181,7 +181,9 @@ const Contact: React.FC = () => {
         .action-card:hover {
           border-color: rgb(var(--card-color));
           transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 20px 40px rgba(var(--card-color), 0.3);
+          box-shadow: 
+            0 20px 40px rgba(var(--card-color), 0.3),
+            inset 0 0 40px rgba(var(--card-color), 0.05);
         }
 
         .action-card.pulse {
@@ -190,7 +192,11 @@ const Contact: React.FC = () => {
 
         @keyframes cardPulse {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); border-color: rgb(var(--card-color)); }
+          50% { 
+            transform: scale(1.05); 
+            border-color: rgb(var(--card-color));
+            box-shadow: 0 0 30px rgba(var(--card-color), 0.5);
+          }
         }
 
         .action-icon {
@@ -407,11 +413,11 @@ const Contact: React.FC = () => {
         <div className="contact-container">
           {/* Título */}
           <div className="contact-title">
-            <h2 className="title-main">CONECTEMOS</h2>
-            <p className="title-subtitle">Transformemos tu idea en realidad</p>
+            <h2 className="title-main">TRABAJEMOS JUNTOS</h2>
+            <p className="title-subtitle">¿Tienes un proyecto en mente? Hablemos</p>
             <p className="contact-cta">
-              Cada proyecto es único, como cada solución que creamos. 
-              Elige la forma más directa de conectar según tu necesidad.
+              Como desarrollador full-stack, puedo llevar tu idea desde el concepto hasta producción. 
+              Elige la forma más directa de contactarme según tu necesidad.
             </p>
           </div>
 
@@ -425,7 +431,6 @@ const Contact: React.FC = () => {
                   '--card-color': action.color.replace('#', '').match(/.{2}/g)?.map(hex => parseInt(hex, 16)).join(', ') || '64, 224, 255'
                 } as React.CSSProperties}
                 onClick={action.action}
-                
               >
                 <div className="action-icon">
                   {action.icon}
