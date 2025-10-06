@@ -52,7 +52,6 @@ const Header: React.FC = () => {
     if (!isMenuOpen && !isAnimating) {
       setIsAnimating(true);
       
-      // Capturar la posición actual del botón del avión
       const planeButton = document.querySelector('.plane-button');
       if (planeButton) {
         const rect = planeButton.getBoundingClientRect();
@@ -62,23 +61,19 @@ const Header: React.FC = () => {
         });
       }
       
-      // Inicia la animación del avión
       setTimeout(() => {
         setShowPlane(false);
       }, 1600);
       
-      // Activar efecto de choque cuando llegue al centro
       setTimeout(() => {
         setShowCrash(true);
       }, 1700);
       
-      // Prepara el menú
       setTimeout(() => {
         setMenuReady(true);
         setShowCrash(false);
       }, 1900);
       
-      // Abre el menú con explosión
       setTimeout(() => {
         setIsMenuOpen(true);
         setIsAnimating(false);
@@ -139,7 +134,6 @@ const Header: React.FC = () => {
           margin: 0 auto;
           pointer-events: auto;
         }
-        /* Logo Section */
         .logo-section {
           display: flex;
           align-items: center;
@@ -190,7 +184,80 @@ const Header: React.FC = () => {
           letter-spacing: 3px;
           text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
         }
-        /* Paper Plane Container */
+        .actions-container {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          z-index: 10002;
+        }
+        .action-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.7rem 1.2rem;
+          background: rgba(64, 224, 255, 0.1);
+          border: 2px solid rgba(64, 224, 255, 0.3);
+          border-radius: 25px;
+          color: #40e0ff;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        .action-btn::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: rgba(64, 224, 255, 0.2);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.4s ease;
+        }
+        .action-btn:hover::before {
+          width: 200%;
+          height: 200%;
+        }
+        .action-btn:hover {
+          background: rgba(64, 224, 255, 0.2);
+          border-color: #40e0ff;
+          transform: translateY(-2px);
+          box-shadow: 
+            0 10px 30px rgba(64, 224, 255, 0.3),
+            0 0 20px rgba(64, 224, 255, 0.2);
+        }
+        .btn-icon {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          z-index: 1;
+          filter: drop-shadow(0 0 5px rgba(64, 224, 255, 0.6));
+        }
+        .btn-label {
+          position: relative;
+          z-index: 1;
+          text-shadow: 0 0 10px rgba(64, 224, 255, 0.5);
+        }
+        .cv-btn:hover {
+          animation: cvPulse 0.6s ease-in-out;
+        }
+        @keyframes cvPulse {
+          0%, 100% { transform: translateY(-2px) scale(1); }
+          50% { transform: translateY(-2px) scale(1.05); }
+        }
+        .github-btn:hover .btn-icon {
+          animation: githubRotate 0.6s ease-in-out;
+        }
+        @keyframes githubRotate {
+          0%, 100% { transform: rotate(0deg); }
+          50% { transform: rotate(15deg); }
+        }
         .plane-trigger {
           position: relative;
           width: 60px;
@@ -218,7 +285,6 @@ const Header: React.FC = () => {
           transform: scale(1.1);
           box-shadow: 0 0 30px rgba(64, 224, 255, 0.3);
         }
-        /* Paper Plane Icon */
         .paper-plane {
           position: relative;
           z-index: 10003;
@@ -233,7 +299,6 @@ const Header: React.FC = () => {
           stroke-linejoin: round;
           filter: drop-shadow(0 0 8px rgba(64, 224, 255, 0.8));
         }
-        /* LÍNEA RECTA AL CENTRO CON ROTACIÓN 150deg */
         .paper-plane.flying {
           position: fixed;
           animation: straightToCenter 1.7s ease-in-out forwards;
@@ -270,7 +335,6 @@ const Header: React.FC = () => {
             opacity: 0;
           }
         }
-        /* Efecto de choque/explosión mejorado */
         .crash-effect {
           position: fixed;
           top: 50vh;
@@ -307,7 +371,6 @@ const Header: React.FC = () => {
             box-shadow: 0 0 60px 30px rgba(64, 224, 255, 0);
           }
         }
-        /* Partículas de choque */
         .particles-container {
           position: fixed;
           top: 50vh;
@@ -341,7 +404,6 @@ const Header: React.FC = () => {
             transform: translate(var(--particle-x), var(--particle-y)) scale(0.3);
           }
         }
-        /* Efecto de onda expansiva */
         .shockwave {
           position: fixed;
           top: 50vh;
@@ -370,7 +432,6 @@ const Header: React.FC = () => {
             opacity: 0;
           }
         }
-        /* MENÚ FUTURISTA A PANTALLA COMPLETA */
         .menu-overlay {
           position: fixed;
           top: 0;
@@ -392,7 +453,6 @@ const Header: React.FC = () => {
         .menu-overlay.open {
           opacity: 1;
         }
-        /* Efecto de explosión desde el centro */
         .menu-explosion {
           position: absolute;
           top: 50%;
@@ -419,7 +479,6 @@ const Header: React.FC = () => {
             box-shadow: 0 0 200px 100px rgba(64, 224, 255, 0);
           }
         }
-        /* Grid futurista de fondo */
         .menu-grid {
           position: absolute;
           width: 100%;
@@ -438,7 +497,6 @@ const Header: React.FC = () => {
             transform: translate(50px, 50px);
           }
         }
-        /* Contenido del menú */
         .menu-content {
           position: relative;
           width: 100%;
@@ -450,7 +508,6 @@ const Header: React.FC = () => {
           z-index: 10001;
           padding: 2rem;
         }
-        /* Close Button Futurista */
         .menu-close {
           position: absolute;
           top: 2rem;
@@ -475,7 +532,6 @@ const Header: React.FC = () => {
           transform: rotate(90deg) scale(1.1);
           box-shadow: 0 0 30px rgba(64, 224, 255, 0.5);
         }
-        /* Navigation Items Grid */
         .nav-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -568,7 +624,6 @@ const Header: React.FC = () => {
           color: #8fa8b6;
           line-height: 1.4;
         }
-        /* Holographic effect text */
         .nav-card:hover .nav-card-title {
           background: linear-gradient(45deg, #40e0ff, #64dcff, #40e0ff);
           background-size: 200% 200%;
@@ -585,44 +640,49 @@ const Header: React.FC = () => {
             background-position: 200% 50%;
           }
         }
-        /* Responsive Design */
         @media (max-width: 768px) {
           .header-content {
             padding: 1rem;
           }
-          
           .logo-text {
             font-size: 1rem;
             letter-spacing: 2px;
           }
-          
+          .actions-container {
+            gap: 0.5rem;
+          }
+          .action-btn {
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+          }
+          .btn-icon {
+            width: 18px;
+            height: 18px;
+          }
+          .btn-label {
+            display: none;
+          }
           .plane-button {
             width: 50px;
             height: 50px;
           }
-          
           .paper-plane svg {
             width: 24px;
             height: 24px;
           }
-          
           .nav-grid {
             grid-template-columns: 1fr;
             max-width: 400px;
           }
-          
           .nav-card {
             padding: 1.5rem;
           }
-          
           .nav-card-icon {
             font-size: 2rem;
           }
-          
           .nav-card-title {
             font-size: 1.2rem;
           }
-          
           .menu-close {
             top: 1rem;
             right: 1rem;
@@ -633,84 +693,71 @@ const Header: React.FC = () => {
       `}</style>
       <header className={`header-container ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-backdrop"></div>
-        
         <div className="header-content">
-          {/* Logo */}
           <div className="logo-section" onClick={() => scrollToSection('home')}>
             <div className="logo-hex">
               <svg viewBox="0 0 40 35">
-                <path 
-                  className="logo-path" 
-                  d="M10 0 L30 0 L40 17.5 L30 35 L10 35 L0 17.5 Z"
-                />
+                <path className="logo-path" d="M10 0 L30 0 L40 17.5 L30 35 L10 35 L0 17.5 Z"/>
               </svg>
               <div className="logo-a">A</div>
             </div>
             <span className="logo-text">ACUBIC</span>
           </div>
-          {/* Paper Plane Trigger */}
-          <div className="plane-trigger">
-            {showPlane && (
-              <div className="plane-button" onClick={handleToggleMenu}>
-                <div className="paper-plane">
+          <div className="actions-container">
+            <a href="/CV_Angel_Abraham_Rivera.pdf" download="CV_Angel_Abraham_Rivera.pdf" className="action-btn cv-btn" title="Descargar CV">
+              <svg className="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span className="btn-label">CV</span>
+            </a>
+            <a href="https://github.com/abraham-developer" target="_blank" rel="noopener noreferrer" className="action-btn github-btn" title="Ver GitHub">
+              <svg className="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span className="btn-label">GitHub</span>
+            </a>
+            <div className="plane-trigger">
+              {showPlane && (
+                <div className="plane-button" onClick={handleToggleMenu}>
+                  <div className="paper-plane">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                    </svg>
+                  </div>
+                </div>
+              )}
+              {isAnimating && (
+                <div className="paper-plane flying" style={{'--start-top': `${planePosition.top}px`, '--start-left': `${planePosition.left}px`} as React.CSSProperties}>
                   <svg viewBox="0 0 24 24">
-                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
                   </svg>
                 </div>
-              </div>
-            )}
-            {/* Avión animado */}
-            {isAnimating && (
-              <div 
-                className="paper-plane flying"
-                style={{
-                  '--start-top': `${planePosition.top}px`,
-                  '--start-left': `${planePosition.left}px`
-                } as React.CSSProperties}
-              >
-                <svg viewBox="0 0 24 24">
-                  <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" />
-                </svg>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
-        {/* Efectos de choque (solo se activan cuando llega al centro) */}
         {showCrash && (
           <>
             <div className="crash-effect active"></div>
             <div className="shockwave active"></div>
             <div className="particles-container active">
               {[...Array(12)].map((_, i) => (
-                <div 
-                  key={i}
-                  className="particle"
-                  style={{
-                    '--particle-x': `${Math.cos((i * 30) * Math.PI / 180) * 80}px`,
-                    '--particle-y': `${Math.sin((i * 30) * Math.PI / 180) * 80}px`,
-                    animationDelay: `${i * 0.05}s`
-                  } as React.CSSProperties}
-                ></div>
+                <div key={i} className="particle" style={{'--particle-x': `${Math.cos((i*30)*Math.PI/180)*80}px`, '--particle-y': `${Math.sin((i*30)*Math.PI/180)*80}px`, animationDelay: `${i*0.05}s`} as React.CSSProperties}></div>
               ))}
             </div>
           </>
         )}
       </header>
-      {/* Menu Overlay Futurista */}
       <div className={`menu-overlay ${menuReady ? 'ready' : ''} ${isMenuOpen ? 'open' : ''}`}>
         <div className="menu-explosion"></div>
         <div className="menu-grid"></div>
-        
         <div className="menu-content">
           <button className="menu-close" onClick={handleCloseMenu}>×</button>
-          
           <div className="nav-grid">
             {navItems.map((item) => (
-              <div
-                key={item.id}
-                className={`nav-card ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => scrollToSection(item.id)}
-              >
+              <div key={item.id} className={`nav-card ${activeSection === item.id ? 'active' : ''}`} onClick={() => scrollToSection(item.id)}>
                 <span className="nav-card-icon">{item.icon}</span>
                 <h3 className="nav-card-title">{item.label}</h3>
                 <p className="nav-card-description">{item.description}</p>
