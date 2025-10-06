@@ -6,48 +6,48 @@ const Contact: React.FC = () => {
 
   const contactActions = [
     {
-      id: 'validate',
-      title: 'Validar Proyecto',
-      subtitle: 'Analicemos tu idea',
-      message: 'Hablemos de la viabilidad técnica de tu proyecto',
+      id: 'hire',
+      title: 'Contrátame',
+      subtitle: 'Full-time / Freelance',
+      message: 'Desarrollador disponible para tu equipo',
       method: 'email',
       value: 'desarrollo@abrahamdev.net',
-      icon: '◈',
+      icon: '💼',
       color: '#40e0ff',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Validación de Proyecto - ACUBIC&body=Hola Abraham! Me gustaría validar la viabilidad técnica de mi proyecto.', '_blank')
+      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Oportunidad Laboral - Desarrollador Full Stack&body=Hola Abraham! Estoy interesado en contratarte para nuestro equipo. Me gustaría discutir las oportunidades disponibles.', '_blank')
     },
     {
-      id: 'quote',
-      title: 'Solicitar Cotización',
-      subtitle: 'Presupuesto personalizado',
-      message: 'Obtén una propuesta técnica detallada',
+      id: 'project',
+      title: 'Proyecto Personalizado',
+      subtitle: 'Desarrollo a medida',
+      message: 'Puedo desarrollar lo que necesites',
       method: 'phone',
       value: '55 3889 1487',
-      icon: '◇',
+      icon: '🚀',
       color: '#64b5f6',
       action: () => window.open('tel:+525538891487', '_self')
     },
     {
-      id: 'integration',
-      title: 'Integración Urgente',
-      subtitle: 'Solución rápida',
-      message: '¿Necesitas conectar sistemas ya?',
+      id: 'immediate',
+      title: 'Disponibilidad Inmediata',
+      subtitle: 'Empieza ya',
+      message: 'Listo para integrarme a tu equipo',
       method: 'whatsapp',
       value: 'WhatsApp directo',
-      icon: '◆',
+      icon: '⚡',
       color: '#25d366',
-      action: () => window.open('https://wa.me/525538891487?text=Hola Abraham! Necesito una integración urgente para mi sistema.', '_blank')
+      action: () => window.open('https://wa.me/525538891487?text=Hola Abraham! Me interesa contratarte. ¿Cuándo podemos hablar sobre tu incorporación?', '_blank')
     },
     {
       id: 'consultation',
-      title: 'Consultoría Tech',
-      subtitle: 'Asesoría especializada',
-      message: 'Optimiza tu arquitectura actual',
+      title: 'Entrevista Técnica',
+      subtitle: 'Conversemos',
+      message: 'Agenda una llamada para conocernos',
       method: 'email',
       value: 'desarrollo@abrahamdev.net',
-      icon: '◉',
+      icon: '🎯',
       color: '#ff9800',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Consultoría Técnica - ACUBIC&body=Hola Abraham! Me interesa una consultoría para optimizar mi arquitectura tecnológica.', '_blank')
+      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Entrevista Técnica - Abraham Developer&body=Hola Abraham! Me gustaría agendar una entrevista técnica contigo para discutir oportunidades de colaboración.', '_blank')
     }
   ];
 
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
           font-size: 1.1rem;
           color: #b0c4de;
           line-height: 1.6;
-          max-width: 600px;
+          max-width: 700px;
           margin: 0 auto;
         }
 
@@ -349,26 +349,28 @@ const Contact: React.FC = () => {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          padding: 0.5rem 1rem;
+          padding: 0.8rem 1.5rem;
           background: rgba(76, 175, 80, 0.2);
           border: 1px solid rgba(76, 175, 80, 0.4);
-          border-radius: 20px;
-          font-size: 0.9rem;
+          border-radius: 25px;
+          font-size: 1rem;
           color: #4caf50;
-          margin-top: 1rem;
+          margin-top: 1.5rem;
+          font-weight: 600;
         }
 
         .status-dot {
-          width: 8px;
-          height: 8px;
+          width: 10px;
+          height: 10px;
           background: #4caf50;
           border-radius: 50%;
           animation: statusPulse 2s infinite;
+          box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
         }
 
         @keyframes statusPulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         /* Mobile adjustments */
@@ -413,11 +415,12 @@ const Contact: React.FC = () => {
         <div className="contact-container">
           {/* Título */}
           <div className="contact-title">
-            <h2 className="title-main">TRABAJEMOS JUNTOS</h2>
-            <p className="title-subtitle">¿Tienes un proyecto en mente? Hablemos</p>
+            <h2 className="title-main">DISPONIBLE PARA EMPLEO</h2>
+            <p className="title-subtitle">Desarrollador Full-Stack • Listo para integrarme a tu equipo</p>
             <p className="contact-cta">
-              Como desarrollador full-stack, puedo llevar tu idea desde el concepto hasta producción. 
-              Elige la forma más directa de contactarme según tu necesidad.
+              Como desarrollador especializado en .NET, React, Angular y arquitecturas cloud, 
+              puedo desarrollar lo que necesites. Ya sea full-time, freelance o por proyecto, 
+              estoy totalmente disponible para empezar de inmediato.
             </p>
           </div>
 
@@ -452,7 +455,7 @@ const Contact: React.FC = () => {
 
           {/* Contact info */}
           <div className="contact-info">
-            <h3 className="info-title">Información Directa</h3>
+            <h3 className="info-title">Contacto Directo</h3>
             <div className="contact-details">
               <div className="contact-item">
                 <div className="contact-label">Email</div>
@@ -464,7 +467,7 @@ const Contact: React.FC = () => {
                 </div>
               </div>
               <div className="contact-item">
-                <div className="contact-label">Teléfono</div>
+                <div className="contact-label">Teléfono / WhatsApp</div>
                 <div 
                   className="contact-value"
                   onClick={() => window.open('tel:+525538891487', '_self')}
@@ -479,7 +482,7 @@ const Contact: React.FC = () => {
             </div>
             <div className="availability-badge">
               <div className="status-dot"></div>
-              Disponible para nuevos proyectos
+              100% Disponible • Incorporación Inmediata
             </div>
           </div>
         </div>
