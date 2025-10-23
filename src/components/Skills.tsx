@@ -469,7 +469,7 @@ const Skills: React.FC = () => {
         <div className="skills-container">
           {/* Título */}
           <div className="skills-title">
-            <h2 className="title-main">MI STACK</h2>
+            <h2 className="title-main">STACK</h2>
             <p className="title-subtitle">Tecnologías que dominamos y conectamos</p>
           </div>
 

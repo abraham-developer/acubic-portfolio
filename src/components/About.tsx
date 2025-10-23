@@ -48,8 +48,8 @@ const About: React.FC = () => {
     },
     {
       year: "2022",
-      title: "ACUBIC Nace",
-      description: "Fundé ACUBIC como mi sello personal: Abraham Cubic. Un espacio donde convergen automatización, integraciones y soluciones cloud que realmente transforman operaciones empresariales.",
+      title: "CUBEARK.COM Nace",
+      description: "Fundé CUBEARK.COM como mi sello personal: Abraham Cubic. Un espacio donde convergen automatización, integraciones y soluciones cloud que realmente transforman operaciones empresariales.",
       icon: "⭐",
       color: "#81c784"
     },
@@ -348,7 +348,7 @@ const About: React.FC = () => {
           function buildFuture() &#123; return innovation; &#125;
         </div>
         <div className="floating-code" style={{ left: '70%', animationDelay: '15s' }}>
-          ACUBIC.initialize(passion, code);
+          CUBEARK.COM.initialize(passion, code);
         </div>
 
         {/* Red neuronal de fondo */}
@@ -369,7 +369,7 @@ const About: React.FC = () => {
         <div className="story-container">
           {/* Título de la sección */}
           <div className="section-title">
-            <h2 className="title-main">MI TRAYECTORIA</h2>
+            <h2 className="title-main">TRAYECTORIA</h2>
             <p className="title-subtitle">De las primeras líneas de código a arquitecturas empresariales</p>
           </div>
 

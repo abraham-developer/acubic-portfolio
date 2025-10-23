@@ -464,7 +464,7 @@ const Portfolio: React.FC = () => {
         <div className="portfolio-container">
           {/* Título */}
           <div className="portfolio-title">
-            <h2 className="title-main">MIS PROYECTOS</h2>
+            <h2 className="title-main">PROYECTOS</h2>
             <p className="title-subtitle">Soluciones reales que he desarrollado y desplegado en producción</p>
           </div>
 
