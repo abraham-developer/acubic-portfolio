@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           
           {/* Actions */}
           <div className="header-actions">
-            <a 
+            {/* <a 
               href="/public/CV_Angel_Abraham_Rivera.pdf" 
               download="CV_Angel_Abraham_Rivera.pdf" 
               className="action-btn"
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
                 <line x1="12" y1="15" x2="12" y2="3"/>
               </svg>
               <span className="btn-label">CV</span>
-            </a>
+            </a> */}
             
             <a 
               href="https://github.com/abraham-developer" 
