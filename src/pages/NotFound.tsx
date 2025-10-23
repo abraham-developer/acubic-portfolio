@@ -384,7 +384,7 @@ const NotFound: React.FC = () => {
             </svg>
             <div className="logo-a">A</div>
           </div>
-          <span className="logo-text">ACUBIC</span>
+          <span className="logo-text">CUBEARK</span>
         </div>
 
         <div className="error-content">

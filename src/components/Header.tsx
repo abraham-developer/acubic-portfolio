@@ -74,7 +74,7 @@ const Header: React.FC = () => {
           {/* Actions */}
           <div className="header-actions">
             <a 
-              href="/CV_Angel_Abraham_Rivera.pdf" 
+              href="/public/CV_Angel_Abraham_Rivera.pdf" 
               download="CV_Angel_Abraham_Rivera.pdf" 
               className="action-btn"
               title="Descargar CV"
