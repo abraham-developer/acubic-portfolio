@@ -11,10 +11,10 @@ const Contact: React.FC = () => {
       subtitle: 'Full-time / Freelance',
       message: 'Desarrollador disponible para tu equipo',
       method: 'email',
-      value: 'desarrollo@abrahamdev.net',
+      value: 'abrahamdeveloperc@gmail.com',
       icon: '💼',
       color: '#40e0ff',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Oportunidad Laboral - Desarrollador Full Stack&body=Hola Abraham! Estoy interesado en contratarte para nuestro equipo. Me gustaría discutir las oportunidades disponibles.', '_blank')
+      action: () => window.open('mailto:abrahamdeveloperc@gmail.com?subject=Oportunidad Laboral - Desarrollador Full Stack&body=Hola Abraham! Estoy interesado en contratarte para nuestro equipo. Me gustaría discutir las oportunidades disponibles.', '_blank')
     },
     {
       id: 'project',
@@ -44,10 +44,10 @@ const Contact: React.FC = () => {
       subtitle: 'Conversemos',
       message: 'Agenda una llamada para conocernos',
       method: 'email',
-      value: 'desarrollo@abrahamdev.net',
+      value: 'abrahamdeveloperc@gmail.com',
       icon: '🎯',
       color: '#ff9800',
-      action: () => window.open('mailto:desarrollo@abrahamdev.net?subject=Entrevista Técnica - Abraham Developer&body=Hola Abraham! Me gustaría agendar una entrevista técnica contigo para discutir oportunidades de colaboración.', '_blank')
+      action: () => window.open('mailto:abrahamdeveloperc@gmail.com?subject=Entrevista Técnica - Abraham Developer&body=Hola Abraham! Me gustaría agendar una entrevista técnica contigo para discutir oportunidades de colaboración.', '_blank')
     }
   ];
 
@@ -461,9 +461,9 @@ const Contact: React.FC = () => {
                 <div className="contact-label">Email</div>
                 <div 
                   className="contact-value"
-                  onClick={() => window.open('mailto:desarrollo@abrahamdev.net', '_blank')}
+                  onClick={() => window.open('mailto:abrahamdeveloperc@gmail.com', '_blank')}
                 >
-                  desarrollo@abrahamdev.net
+                  abrahamdeveloperc@gmail.com
                 </div>
               </div>
               <div className="contact-item">

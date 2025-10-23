@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
             </a>
             
             <a 
-              href="mailto:desarrollo@abrahamdev.net" 
+              href="mailto:abrahamdeveloperc@gmail.com" 
               className="social-link" 
               title="Email"
             >
@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
             <p className="footer-copyright">
               © {currentYear} Cubeark. Desarrollado por Abraham Rivera
             </p>
-            <a href="mailto:desarrollo@abrahamdev.net" className="footer-email">
-              desarrollo@abrahamdev.net
+            <a href="mailto:abrahamdeveloperc@gmail.com" className="footer-email">
+              abrahamdeveloperc@gmail.com
             </a>
           </div>
         </div>
