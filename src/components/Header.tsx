@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   }, []);
   
   const navItems = [
-    { id: 'home', label: 'INICIO', icon: '🏠', description: 'Página principal' },
+    
     { id: 'skills', label: 'TECNOLOGÍAS', icon: '⚡', description: 'Stack tecnológico' },
     { id: 'portfolio', label: 'PROYECTOS', icon: '💼', description: 'Portafolio' },
     { id: 'contact', label: 'CONTACTO', icon: '✉️', description: 'Información de contacto' }
